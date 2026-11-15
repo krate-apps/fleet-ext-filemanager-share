@@ -1,0 +1,18 @@
+schema: 1
+id: org.fleet.filemanager-share
+name: File Manager Share
+description: Create share links under download roots with TTL and download limits.
+version: 1.0.0
+api: ">=1.0.0 <2.0.0"
+engines:
+  - rtorrent
+capabilities:
+  - files.read
+  - storage.read
+frontend:
+  type: declarative
+  entry: ui/extension.json
+backend:
+  type: process
+  executable: bin/filemanager-share-worker
+  protocol: jsonrpc-2

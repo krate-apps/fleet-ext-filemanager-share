@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "extensionId": "org.fleet.filemanager-share",
+  "pages": [
+    {
+      "id": "shares",
+      "title": "File Shares",
+      "route": "/ext/org.fleet.filemanager-share/shares"
+    }
+  ],
+  "actions": [
+    {
+      "id": "list-shares",
+      "label": "Refresh shares",
+      "target": "global"
+    }
+  ],
+  "panels": [
+    {
+      "id": "fm-share",
+      "title": "File Shares",
+      "placement": "settings"
+    }
+  ],
+  "forms": [
+    {
+      "id": "share-create",
+      "title": "Create public download link",
+      "fields": [
+        {
+          "name": "path",
+          "label": "Absolute file path under download_roots",
+          "kind": "text",
+          "required": true,
+          "placeholder": "/data/downloads"
+        },
+        {
+          "name": "ttlSec",
+          "label": "TTL seconds (0 = no expiry)",
+          "kind": "number"
+        },
+        {
+          "name": "maxDownloads",
+          "label": "Max downloads (0 = unlimited)",
+          "kind": "number"
+        }
+      ],
+      "description": "Adjust Create public download link — essentials first, extras under More options."
+    },
+    {
+      "id": "share-revoke",
+      "title": "Revoke share token",
+      "fields": [
+        {
+          "name": "token",
+          "label": "Share token",
+          "kind": "text",
+          "required": true,
+          "placeholder": "share-token"
+        }
+      ],
+      "description": "Adjust Revoke share token — essentials first, extras under More options."
+    }
+  ]
+}
